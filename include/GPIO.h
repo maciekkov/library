@@ -6,6 +6,10 @@
 #include <fcntl.h>
 #include <sstream>
 #include <stdlib.h>
+//#include <poll.h>
+#include <string.h>
+
+#define RDBUF_LEN 5
 using namespace std;
 class GPIO
 {
@@ -19,11 +23,13 @@ public:
     int Gexport();
     int Gdirection(const string &data);
     int GsetValue(unsigned int num);
+    int GsetEdge(const string& mode);
     int GgetValue();
     int Gunexport();
+    int Ginterupt();
     virtual ~GPIO();
 private:
-    int openFile(const string& path,const string& data);
+    int openFile(const string& path,unsigned int mode,const string& data);
     string toString(unsigned int num);
 };
 

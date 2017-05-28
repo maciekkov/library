@@ -1,12 +1,16 @@
 # depslib dependency file v1.0
-1496000019 source:d:\c++\biblioteka\main.cpp
+1496001410 source:d:\c++\biblioteka\main.cpp
 	<iostream>
 	"GPIO.h"
 
-1496000019 d:\c++\biblioteka\include\gpio.h
+1496009298 d:\c++\biblioteka\include\gpio.h
 	<string>
 	<fstream>
 	<fcntl.h>
 	<sstream>
 	<stdlib.h>
+	<string.h>
+
+1496001710 source:d:\c++\biblioteka\src\gpio.cpp
+	"GPIO.h"
 
