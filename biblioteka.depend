@@ -1,0 +1,12 @@
+# depslib dependency file v1.0
+1495985184 source:d:\c++\biblioteka\main.cpp
+	<iostream>
+	"GPIO.h"
+
+1495998566 d:\c++\biblioteka\include\gpio.h
+	<string>
+	<fstream>
+	<fcntl.h>
+	<sstream>
+	<stdlib.h>
+
