@@ -8,7 +8,7 @@ GPIO::GPIO(const unsigned int gpioNum)
 }
 int GPIO::openFile(const string& path,const string& data)
 {
-    ofstream fd;
+    fstream fd;
     string bufor = "sys/class/gpio"+path;
     fd.open(bufor.c_str());
     if(fd.fail())
@@ -22,20 +22,30 @@ int GPIO::openFile(const string& path,const string& data)
 }
 int GPIO::Gexport()
 {
-    string path = "export";
+    string path = "/export";
     if(openFile(path,_gpioNum)<0)
     {
         perror("error export");
         exit(-1);
     }
 }
-int GPIO::Gdirection()
+int GPIO::Gdirection(const string &data)
 {
-
+    string path ="/gpio"+_gpioNum+"/unexport";
+    if(openFile(path,data)<0)
+    {
+        perror("error direction");
+        exit(-1);
+    }
 }
 int GPIO::GsetValue(unsigned int num)
 {
-
+     string path ="gpio"+_gpioNum+"/value";
+    if(openFile(path,toString(num))<0)
+    {
+        perror("error value");
+        exit(-1);
+    }
 }
 int GPIO::GgetValue()
 {

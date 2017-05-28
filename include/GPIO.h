@@ -17,7 +17,7 @@ public:
     GPIO(const string& gpioNum):_gpioNum(gpioNum){}
 
     int Gexport();
-    int Gdirection();
+    int Gdirection(const string &data);
     int GsetValue(unsigned int num);
     int GgetValue();
     int Gunexport();
