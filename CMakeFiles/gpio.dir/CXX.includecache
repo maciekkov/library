@@ -1,0 +1,34 @@
+#IncludeRegexLine: ^[ 	]*#[ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/pi/Desktop/gpiolibrary/library/GPIO.cpp
+GPIO.h
+/home/pi/Desktop/gpiolibrary/library/GPIO.h
+
+/home/pi/Desktop/gpiolibrary/library/GPIO.h
+string
+-
+fstream
+-
+fcntl.h
+-
+sstream
+-
+stdlib.h
+-
+poll.h
+-
+string.h
+-
+
+/home/pi/Desktop/gpiolibrary/library/main.cpp
+iostream
+-
+GPIO.h
+/home/pi/Desktop/gpiolibrary/library/GPIO.h
+
