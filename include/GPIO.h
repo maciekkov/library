@@ -2,24 +2,25 @@
 #define GPIO_H
 
 #include <string>
-#include <fstream>
 #include <fcntl.h>
 #include <sstream>
 #include <stdlib.h>
-#include <poll.h>
 #include <string.h>
 #include <stdio.h>
+#include <sys/types.h>
+#include <unistd.h> 
+#include <iostream>
+#include <fstream>
 
-#define RDBUF_LEN 5
 using namespace std;
+
 class GPIO
 {
-    string _gpioNum;
-  
+    string _gpioNum;                                    //zmienna przechowywujaca numer gpio 
 public:
     GPIO();
-    GPIO(const unsigned int gpioNum);
-    GPIO(const string& gpioNum):_gpioNum(gpioNum){}
+    GPIO(const unsigned int gpioNum,const string& direction="out");
+    GPIO(const string&  gpioNum,const string& direction="out");
 
     int Gexport();
     int Gdirection(const string &data);
@@ -27,10 +28,12 @@ public:
     int GsetEdge(const string& mode);
     int GgetValue();
     int Gunexport();
-    int Ginterupt();
+    
     virtual ~GPIO();
 private:
-    int openFile(const string& path,unsigned int mode,const string& data);
+   int  openStreamWrite(const string& path,const string& data="");
+   int  openStreamRead(const string& path);
+
     string toString(unsigned int num);
 };
 
